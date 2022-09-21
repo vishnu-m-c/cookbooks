@@ -14,14 +14,15 @@ class Home extends StatelessWidget {
         title: const Text('First Route'),
       ),
       body: Center(
-        child: ElevatedButton(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+        children:[ ElevatedButton(
+          style: ElevatedButton.styleFrom(fixedSize: Size(200, 40)),
           onPressed: () {
             final snackBar = SnackBar(
               content: const Text('Yay! A SnackBar!'),
               action: SnackBarAction(
                 label: 'Undo',
                 onPressed: () {
-                  // Some code to undo the change.
                 },
               ),
             );
@@ -29,6 +30,25 @@ class Home extends StatelessWidget {
           },
           child: const Text('Show SnackBar'),
         ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+            primary: Colors.grey),
+              child: Text("export fonts"),
+          onPressed:(){},
+  ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+            primary: Colors.green),
+            child: Text("button"),
+            onPressed:(){
+    Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const AnimationTest()),
+    );
+    },
+          ),
+      ],
+    ),
       ),
       drawer: Drawer(
         child: ListView(
