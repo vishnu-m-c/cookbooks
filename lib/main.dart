@@ -1,5 +1,6 @@
 import'package:flutter/material.dart';
 import'package:widgets/animationtest.dart';
+import'package:widgets/customfont.dart';
 void main() {
   runApp(
       MaterialApp(home: const Home())
@@ -13,10 +14,13 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text('First Route'),
       ),
-      body: Center(
+      body:
+
+      Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
         children:[ ElevatedButton(
-          style: ElevatedButton.styleFrom(fixedSize: Size(200, 40)),
+          style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+          primary: Colors.orange),
           onPressed: () {
             final snackBar = SnackBar(
               content: const Text('Yay! A SnackBar!'),
@@ -33,13 +37,16 @@ class Home extends StatelessWidget {
           ElevatedButton(
             style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
             primary: Colors.grey),
-              child: Text("export fonts"),
-          onPressed:(){},
+              child: Text("custom font"),
+          onPressed:(){Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const CustomFont()),
+          );},
   ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
             primary: Colors.green),
-            child: Text("button"),
+            child: Text("export fonts"),
             onPressed:(){
     Navigator.push(
     context,
