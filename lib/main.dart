@@ -20,7 +20,9 @@ class Home extends StatelessWidget {
       Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
 
-        children:[ ElevatedButton(
+        children:[ 
+          Image.network(width: 400,height: 200,'https://5.imimg.com/data5/LG/QF/CT/SELLER-36779886/smiley-ball-500x500.jpg'),
+          ElevatedButton(
           style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
           primary: Colors.orange),
           onPressed: () {
