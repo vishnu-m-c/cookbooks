@@ -1,6 +1,7 @@
 import'package:flutter/material.dart';
 import'package:widgets/animationtest.dart';
 import'package:widgets/customfont.dart';
+import'package:widgets/validationpage.dart';
 void main() {
   runApp(
       MaterialApp(home: const Home())
@@ -18,6 +19,7 @@ class Home extends StatelessWidget {
 
       Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
+
         children:[ ElevatedButton(
           style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
           primary: Colors.orange),
@@ -54,7 +56,20 @@ class Home extends StatelessWidget {
     );
     },
           ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+                primary: Colors.black),
+            child: Text("Validation Page"),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ValidationPage()),
+              );
+            },
+          ),
       ],
+
+
     ),
       ),
       drawer: Drawer(
@@ -83,5 +98,6 @@ class Home extends StatelessWidget {
         ),
       ),
     );
+
   }
 }
