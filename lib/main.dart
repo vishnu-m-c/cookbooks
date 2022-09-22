@@ -1,8 +1,11 @@
 import'package:flutter/material.dart';
 import'package:widgets/animationtest.dart';
 import'package:widgets/customfont.dart';
+import 'package:widgets/swipedismiss.dart';
 import'package:widgets/validationpage.dart';
 import'package:widgets/textstyle.dart';
+import'package:widgets/tab.dart';
+import'package:widgets/swipedismiss.dart';
 void main() {
   runApp(
       MaterialApp(home: const Home())
@@ -79,9 +82,29 @@ class Home extends StatelessWidget {
               );
             },
           ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+                primary: Colors.red),
+            child: Text("Tab Demo"),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const TabBarDemo()),
+              );
+            },
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+                primary: Colors.red),
+            child: Text("Tab Demo"),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const swipe()),
+              );
+            },
+          ),
       ],
-
-
     ),
       ),
       drawer: Drawer(
@@ -110,6 +133,5 @@ class Home extends StatelessWidget {
         ),
       ),
     );
-
   }
 }
