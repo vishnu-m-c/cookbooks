@@ -95,8 +95,8 @@ class Home extends StatelessWidget {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
-                primary: Colors.red),
-            child: Text("Tab Demo"),
+                primary: Colors.grey),
+            child: Text("swipe and dismiss"),
             onPressed:(){
               Navigator.push(
                 context,

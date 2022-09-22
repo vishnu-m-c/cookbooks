@@ -8,8 +8,38 @@ class swipe extends StatefulWidget {
 
 class _swipeState extends State<swipe> {
   @override
+  final items = List<String>.generate(10, (i) => 'Item ${i + 1}');
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("title"),
+        ),
+        body: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            final item = items[index];
+            return Dismissible(
+              key: Key(item),
+              onDismissed: (direction) {
+                setState(() {
+                  items.removeAt(index);
+                });
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text('$item dismissed')));
+              },
+              background: Container(color: Colors.red),
+              child: ListTile(
+                title: Text(item),
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
 
