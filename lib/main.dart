@@ -20,8 +20,7 @@ class Home extends StatelessWidget {
         title: const Text('Home'),
       ),
       body:
-      Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+      ListView(padding: EdgeInsets.all(100.0),
         children:[ 
           Image.network(width: 400,height: 200,'https://5.imimg.com/data5/LG/QF/CT/SELLER-36779886/smiley-ball-500x500.jpg'),
           ElevatedButton(
@@ -106,7 +105,6 @@ class Home extends StatelessWidget {
           ),
       ],
     ),
-      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
