@@ -8,6 +8,7 @@ import'package:widgets/tab.dart';
 import'package:widgets/swipedismiss.dart';
 import'package:widgets/gridview.dart';
 import'package:widgets/Parallaxeffect.dart';
+import'package:widgets/focus.dart';
 void main() {
   runApp(
       MaterialApp(home: const Home()
@@ -23,8 +24,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(backgroundColor: Colors.red,
         title: const Text('Home'),
       ),
-      body:
-      ListView(padding: EdgeInsets.all(100.0),
+     body:ListView(padding: EdgeInsets.all(100.0),
         children:[ 
           Image.network(width: 400,height: 200,'https://5.imimg.com/data5/LG/QF/CT/SELLER-36779886/smiley-ball-500x500.jpg'),
           ElevatedButton(
@@ -115,6 +115,17 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const ExampleParallax()),
+              );
+            },
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+                primary: Colors.black),
+            child: Text("Text field focus"),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const focus()),
               );
             },
           ),
