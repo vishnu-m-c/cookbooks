@@ -6,9 +6,13 @@ import'package:widgets/validationpage.dart';
 import'package:widgets/textstyle.dart';
 import'package:widgets/tab.dart';
 import'package:widgets/swipedismiss.dart';
+import'package:widgets/gridview.dart';
+import'package:widgets/Parallaxeffect.dart';
 void main() {
   runApp(
-      MaterialApp(home: const Home())
+      MaterialApp(home: const Home()
+      )
+
   );
 }
 class Home extends StatelessWidget {
@@ -72,7 +76,7 @@ class Home extends StatelessWidget {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
-                primary: Colors.yellow),
+                primary: Colors.blue),
             child: Text("Text field"),
             onPressed:(){
               Navigator.push(
@@ -94,12 +98,23 @@ class Home extends StatelessWidget {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
-                primary: Colors.grey),
+                primary: Colors.brown),
             child: Text("swipe and dismiss"),
             onPressed:(){
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const swipe()),
+              );
+            },
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+                primary: Colors.black),
+            child: Text("parallax effect"),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ExampleParallax()),
               );
             },
           ),
@@ -114,16 +129,16 @@ class Home extends StatelessWidget {
                 image: DecorationImage(image: NetworkImage('https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmVlbCUyMGdvb2R8ZW58MHx8MHx8&w=1000&q=80')),
                 color: Colors.blue,
               ),
-              child: Text('Drawer Header'),
+              child: Text(''),
             ),
             ListTile(
-              title: const Text('Item 1'),
+              title: const Text('graphics'),
               onTap: () {
                 MaterialPageRoute(builder: (context) => const Textstyle());
               },
             ),
             ListTile(
-              title: const Text('Item 2'),
+              title: const Text('gestures'),
               onTap: () {
                 Navigator.pop(context);
               },
