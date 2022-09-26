@@ -12,7 +12,7 @@ class _TextstyleState extends State<Textstyle> {
     return Scaffold(
       appBar: AppBar(
         title:
-        const Text("Text filed and style") ,
+        const Text("Text field and style") ,
         backgroundColor: Colors.orange,
       ),
       backgroundColor: Colors.white,

@@ -9,6 +9,8 @@ import'package:widgets/swipedismiss.dart';
 import'package:widgets/gridview.dart';
 import'package:widgets/Parallaxeffect.dart';
 import'package:widgets/focus.dart';
+import 'package:widgets/longlist.dart';
+import 'package:widgets/fadeimages.dart';
 void main() {
   runApp(
       MaterialApp(home: const Home()
@@ -126,6 +128,28 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const focus()),
+              );
+            },
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+                primary: Colors.black),
+            child: Text("longList"),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => longList()),
+              );
+            },
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+                primary: Colors.black),
+            child: Text("Fade Images"),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => fadeImages()),
               );
             },
           ),
