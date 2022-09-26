@@ -11,6 +11,7 @@ import'package:widgets/Parallaxeffect.dart';
 import'package:widgets/focus.dart';
 import 'package:widgets/longlist.dart';
 import 'package:widgets/fadeimages.dart';
+import 'package:widgets/widgetAnimation.dart';
 void main() {
   runApp(
       MaterialApp(home: const Home()
@@ -150,6 +151,17 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => fadeImages()),
+              );
+            },
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+                primary: Colors.black),
+            child: Text("Text field focus"),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const WidgetAnimation()),
               );
             },
           ),
