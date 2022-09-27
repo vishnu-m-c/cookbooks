@@ -13,6 +13,7 @@ import 'package:widgets/longlist.dart';
 import 'package:widgets/fadeimages.dart';
 import 'package:widgets/widgetAnimation.dart';
 import 'package:widgets/datareturn.dart';
+import 'package:widgets/navigation.dart';
 void main() {
   runApp(
       MaterialApp(home: const Home()
@@ -158,7 +159,7 @@ class Home extends StatelessWidget {
           ElevatedButton(
             style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
                 primary: Colors.black),
-            child: Text("Text field focus"),
+            child: Text("widget animation"),
             onPressed:(){
               Navigator.push(
                 context,
@@ -174,6 +175,17 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const DataReturn()),
+              );
+            },
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+                primary: Colors.black),
+            child: Text("Navigate Back"),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const navigateWith()),
               );
             },
           ),
