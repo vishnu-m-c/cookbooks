@@ -12,6 +12,7 @@ import'package:widgets/focus.dart';
 import 'package:widgets/longlist.dart';
 import 'package:widgets/fadeimages.dart';
 import 'package:widgets/widgetAnimation.dart';
+import 'package:widgets/datareturn.dart';
 void main() {
   runApp(
       MaterialApp(home: const Home()
@@ -162,6 +163,17 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const WidgetAnimation()),
+              );
+            },
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(fixedSize: Size(200, 40),
+                primary: Colors.black),
+            child: Text("Data return"),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DataReturn()),
               );
             },
           ),
